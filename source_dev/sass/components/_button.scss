@@ -1,0 +1,221 @@
+/* btn */
+
+// Variables ===============================
+// 공통
+$btn-all-border-width:1px;
+
+
+// Mixin ===============================
+// color
+@mixin mix-basic($color, $border-style, $border-color, $background-color) {
+	color: $color;
+	border-style: $border-style;
+	border-color: $border-color;
+	background-color: $background-color;
+}
+@mixin mix-slightly($color, $border-style, $border-color, $background-color) {
+	color: $color;
+	border-style: $border-style;
+	border-color: $border-color;
+	background-color: $background-color;
+}
+@mixin mix-normal($color, $border-style, $border-color, $background-color) {
+	color: $color;
+	border-style: $border-style;
+	border-color: $border-color;
+	background-color: $background-color;
+}
+@mixin mix-weighty($color, $border-style, $border-color, $background-color) {
+	color: $color;
+	border-style: $border-style;
+	border-color: $border-color;
+	background-color: $background-color;
+}
+@mixin mix-weightiest($color, $border-style, $border-color, $background-color) {
+	color: $color;
+	border-style: $border-style;
+	border-color: $border-color;
+	background-color: $background-color;
+}
+
+
+// size
+@mixin mix-xsmall($padding, $height, $font-size, $font-weight, $radius) {
+	padding: 0 $padding;
+	height: $height;
+	line-height: $height - ($btn-all-border-width * 2);
+	font-size: $font-size;
+	font-weight: $font-weight;
+	@include border-radius($radius);
+}
+@mixin mix-small($padding, $height, $font-size, $font-weight, $radius) {
+	padding: 0 $padding;
+	height: $height;
+	line-height: $height - ($btn-all-border-width * 2);
+	font-size: $font-size;
+	font-weight: $font-weight;
+	@include border-radius($radius);
+}
+@mixin mix-medium($padding, $height, $font-size, $font-weight, $radius) {
+	padding: 0 $padding;
+	height: $height;
+	line-height: $height - ($btn-all-border-width * 2);
+	font-size: $font-size;
+	font-weight: $font-weight;
+	@include border-radius($radius);
+}
+@mixin mix-large($padding, $height, $font-size, $font-weight, $radius) {
+	padding: 0 $padding;
+	height: $height;
+	line-height: $height - ($btn-all-border-width * 2);
+	font-size: $font-size;
+	font-weight: $font-weight;
+	@include border-radius($radius);
+}
+@mixin mix-xlarge($padding, $height, $font-size, $font-weight, $radius) {
+	padding: 0 $padding;
+	height: $height;
+	line-height: $height - ($btn-all-border-width * 2);
+	font-size: $font-size;
+	font-weight: $font-weight;
+	@include border-radius($radius);
+}
+
+
+
+
+// SCSS ===============================
+.btn {
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	text-decoration: none;
+	-webkit-appearance: value;
+	-moz-appearance: value;
+	appearance: value;
+	@include box-sizing();
+	@include cf();
+	border-width:$btn-all-border-width;
+	&[disabled]{
+		pointer-events: none;
+		cursor: not-allowed;
+	}
+	&[readonly]{
+		pointer-events: none;
+		cursor: not-allowed;
+	}
+}
+
+// color
+.btn.basic {
+	@include mix-basic($color: #fff, $border-style: solid, $border-color: #b2b2b2, $background-color: #b2b2b2)
+}
+.btn.slightly {
+	@include mix-slightly($color: #fff, $border-style: solid, $border-color: #3d3de2, $background-color: #3d3de2)
+}
+.btn.normal{
+	@include mix-normal($color: #000, $border-style: solid, $border-color: #000, $background-color: #fff)
+}
+.btn.weighty {
+	@include mix-weighty($color: #fff, $border-style: solid, $border-color: #000, $background-color: #000)
+}
+.btn.weightiest {
+	@include mix-weightiest($color: #fff, $border-style: solid, $border-color: red, $background-color: red)
+}
+
+// size
+.btn.xsmall {
+	@include mix-xsmall($padding: 10px, $height: 20px, $font-size: 11px, $font-weight: normal, $radius: 0px);
+}
+.btn.small {
+	@include mix-small($padding: 10px, $height: 25px, $font-size: 12px, $font-weight: normal, $radius: 0px);
+}
+.btn.medium {
+	@include mix-medium($padding: 12px, $height: 36px, $font-size: 14px, $font-weight: normal, $radius: 0px);
+}
+.btn.large {
+	@include mix-large($padding: 20px, $height: 48px, $font-size: 14px, $font-weight: normal, $radius: 0px);
+}
+.btn.xlarge {
+	@include mix-xlarge($padding: 20px, $height: 66px, $font-size: 18px, $font-weight: normal, $radius: 0px);
+}
+
+
+
+
+// disable & readonly
+.btn.disable{
+	pointer-events: none;
+	cursor: not-allowed;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	opacity: .65;
+}
+.btn.readonly{
+	pointer-events: none;
+	cursor: not-allowed;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	opacity: .65;
+}
+
+
+
+
+// position
+.button-box {
+	@include cf;
+	font-size:0;
+	margin:0 -3px;
+	&.btn-center{
+		text-align:center;
+	}
+	&.btn-right{
+		text-align:right;
+	}
+	.btn-area{
+		display:inline-block;
+		padding:0 3px;
+		&.left{
+			float:left;
+		}
+		&.right{
+			float:right
+		}
+	}
+}
+
+
+
+
+// block
+.button-box.block{
+	.btn-area{
+		display:block;
+		float:left;
+		width:100%;
+		@include box-sizing;
+		.btn{
+			display:block;
+		}
+	}
+	&.col-2{
+		.btn-area{
+			width:50%;
+		}
+	}
+	&.col-3{
+		.btn-area{
+			width:33.333333%;
+		}
+	}
+	&.col-4{
+		.btn-area{
+			width:25%;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+  "name": "siteName",
+  "description": "사이트 설명",
+  "version": "0.0.1",
+  "author": "kcmschool",
+  "private": true,
+  "scripts": {
+    "***comment***": "----------------- 작업용",
+    "clear": "rm -rf source_dev/css/*.map source_dev/css/**/*.map",
+    "serve": "lite-server -c ./config/ls-config.json",
+    "scss": "node-sass --importer node_modules/node-sass-glob-importer/dist/cli.js source_dev/sass/ -o source_dev/css/",
+    "build": "npm run clear && npm run build:scss",
+    "build:scss": "npm run scss -- --output-style compact",
+    "dev": "npm run dev:scss && npm run dev:watch | npm run serve",
+    "dev:scss": "npm run scss -- --output-style expanded --source-map true --indent-type tab --indent-width 1",
+    "dev:watch": "npm run dev:scss -- -w"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.28.1",
+    "lite-server": "^2.3.0",
+    "node-cli": "^0.1.0",
+    "node-sass": "^4.5.2",
+    "node-sass-glob-importer": "^3.0.2",
+    "node-sass-globbing": "0.0.23",
+    "sass-loader": "^6.0.3",
+    "susy": "^2.2.12"
+  }
+}
