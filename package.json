@@ -17,13 +17,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "css-loader": "^0.28.1",
+    "css-loader": "^6.7.3",
     "lite-server": "^2.3.0",
     "node-cli": "^0.1.0",
     "node-sass": "^4.5.2",
     "node-sass-glob-importer": "^3.0.2",
     "node-sass-globbing": "0.0.23",
-    "sass-loader": "^6.0.3",
+    "sass-loader": "^13.2.0",
     "susy": "^2.2.12"
   }
 }
